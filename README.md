@@ -1,6 +1,8 @@
 # photovideoManager
 获取指定相册下的本地视频，视频包括 本地地址，描述，视频时长，视频大小，封面图等；
 使用：
+
+
 1.比如从下载视频到本地，code:
 
 +(void)downloadWithUrl:(NSString *)urlstring videoname:(NSString*)name block:(void (^)(NSDictionary *tdic))block{
@@ -30,14 +32,21 @@
 }
 
 2. 根据路径保存视频
+
 CollectionManger_photoVideo.h
+
 ///保存视频到自定义的相册
 - (void)saveVideoToAlbum:(NSString *)fileUrl videoName:(NSString *)name;
+- 
 自定义相册的名字是 应用的名字，这个可以自己修改代码
 fileurl 就是上面下载的视频路径，videoname 是自定义的视频的名字
+
 3.获取自定义相册的视频列表
+
 ///获取到指定文件夹的视频
 - (void)loadPhotoesBlock:(void(^)(NSArray* data))block;
+
+
 data的数据结构是：
 [
 {
@@ -65,7 +74,9 @@ list:[
 
 以上数据结构 用 KJPredicateTool 进行了重新排序，可以根据自己的需求修改代码进行排序
 
+
 4.删除指定的视频
+
 ///删除指定的视频
 -(void)deleteVideoWithPath:(PHAsset *)asset block:(void(^)(BOOL success))block;
 
